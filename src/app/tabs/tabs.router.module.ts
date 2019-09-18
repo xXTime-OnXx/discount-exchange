@@ -28,25 +28,25 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'profile',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../pages/profile/profile.module').then(m => m.ProfilePageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/profile',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/profile',
     pathMatch: 'full'
   }
 ];
