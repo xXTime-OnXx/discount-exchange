@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'discover',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../discover/discover.module').then(m => m.DiscoverPageModule)
           }
         ]
       },
@@ -39,14 +39,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/profile',
+        redirectTo: '/tabs/discover',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/profile',
+    redirectTo: '/tabs/discover',
     pathMatch: 'full'
   }
 ];
