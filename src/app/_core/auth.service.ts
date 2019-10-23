@@ -17,6 +17,7 @@ export class AuthService {
 
   async createUserWithEmailAndPassword(user: User) {
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+    await this.router.navigate(['/login']);
   }
   get authenticated(): boolean {
     return this.afAuth.auth.currentUser !== null;

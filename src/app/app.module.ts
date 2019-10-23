@@ -13,6 +13,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AuthGuard} from './_core/auth.guard';
 import {AuthService} from './_core/auth.service';
+import {FormsModule} from '@angular/forms';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyDaeyCH77x1wU-jMgG4qqgODy4xKwXAnwU',
@@ -31,6 +32,7 @@ const firebaseConfig = {
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
+        FormsModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
         AngularFirestoreModule
