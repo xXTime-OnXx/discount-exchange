@@ -16,9 +16,6 @@ export class CodesPage implements OnInit {
 
   ngOnInit() {
     this.ownCodes = this.firestore.collection<Code>('codes').valueChanges();
-    this.ownCodes.subscribe(data => {
-
-    });
   }
 
 }
