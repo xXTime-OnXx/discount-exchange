@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {Company} from '../types/company.type';
 
 @Pipe({
   name: 'doc'
