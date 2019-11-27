@@ -15,7 +15,10 @@ export class CodesPage implements OnInit {
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit() {
-    this.ownCodes = this.firestore.collection<Code>('codes').valueChanges(); // References are missing
+    this.ownCodes = this.firestore.collection<Code>('codes').valueChanges();
+    this.ownCodes.subscribe(data => {
+
+    });
   }
 
 }

@@ -14,6 +14,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AuthGuard} from './_core/auth.guard';
 import {AuthService} from './_core/auth.service';
 import {FormsModule} from '@angular/forms';
+import { DocPipe } from './pipes/doc.pipe';
+import {PipesModule} from './pipes/pipes.module';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyDaeyCH77x1wU-jMgG4qqgODy4xKwXAnwU',
@@ -35,7 +37,7 @@ const firebaseConfig = {
         FormsModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
-        AngularFirestoreModule
+        AngularFirestoreModule,
     ],
     providers: [
         StatusBar,
@@ -43,6 +45,8 @@ const firebaseConfig = {
         AuthGuard,
         AuthService,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+    ],
+    exports: [
     ],
     bootstrap: [AppComponent]
 })

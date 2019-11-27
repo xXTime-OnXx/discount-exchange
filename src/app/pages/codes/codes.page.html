@@ -14,8 +14,8 @@
         <img src="assets/manor.jpg">
       </ion-thumbnail>
       <ion-label>
-        <h3>{{code.company}}</h3>
-        <p>{{code.code}}</p>
+        <h3>{{ (code?.company | doc | async)?.name }}</h3>
+        <p>{{ code?.code }}</p>
       </ion-label>
       <ion-icon name="close-circle" slot="end"></ion-icon>
     </ion-item>
