@@ -16,6 +16,8 @@ import {AuthService} from './_core/auth.service';
 import {FormsModule} from '@angular/forms';
 import { DocPipe } from './pipes/doc.pipe';
 import {PipesModule} from './pipes/pipes.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyDaeyCH77x1wU-jMgG4qqgODy4xKwXAnwU',
@@ -38,6 +40,7 @@ const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
         AngularFirestoreModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     providers: [
         StatusBar,

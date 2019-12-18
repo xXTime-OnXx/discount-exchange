@@ -10,7 +10,7 @@ import {Code} from '../../types/code.type';
 })
 export class CodesPage implements OnInit {
 
-  private ownCodes: Observable<Code[]>;
+  public ownCodes: Observable<Code[]>;
 
   constructor(private firestore: AngularFirestore) { }
 

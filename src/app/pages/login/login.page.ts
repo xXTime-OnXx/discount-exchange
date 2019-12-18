@@ -8,8 +8,8 @@ import {AuthService} from '../../_core/auth.service';
 })
 export class LoginPage implements OnInit {
 
-    private email = 'ryfu@gmx.ch';
-    private password = '123456';
+    public email = '';
+    public password = '';
 
     constructor(private authService: AuthService) {
     }
