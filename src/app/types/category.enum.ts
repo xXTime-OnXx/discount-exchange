@@ -1,7 +1,6 @@
 export enum Category {
     FOOD,
-    CLOTHES,
-    EVENT,
+    CLOTHING,
+    ACTIVITY,
     GAMING,
-    WEB_SHOPS
 }
