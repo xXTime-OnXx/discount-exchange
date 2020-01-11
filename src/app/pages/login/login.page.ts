@@ -15,10 +15,6 @@ export class LoginPage implements OnInit {
     }
 
     async ngOnInit() {
-        console.error('personal datas');
-        this.email = 'timon.schmid@bluewin.ch';
-        this.password = '123456';
-        await this.login()
     }
 
     async login() {
