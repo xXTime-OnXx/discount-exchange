@@ -27,7 +27,7 @@ export class AddDiscountPage implements OnInit {
   }
 
   async back() {
-    await this.router.navigate(['/codes']);
+    await this.router.navigate(['/tabs/codes']);
   }
 
   async add() {
@@ -41,6 +41,6 @@ export class AddDiscountPage implements OnInit {
       user: this.firestore.doc('/users/' + this.afAuth.auth.currentUser.uid).ref,
     };
     await this.firestore.collection('codes').doc(id).set(code);
-    await this.router.navigate(['/codes']);
+    await this.router.navigate(['/tabs/codes']);
   }
 }
