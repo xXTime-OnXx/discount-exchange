@@ -15,8 +15,9 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
-  { path: 'codes', loadChildren: './pages/codes/codes.module#CodesPageModule' },
-  { path: 'discover', loadChildren: './pages/discover/discover.module#DiscoverPageModule' },  { path: 'add-discount', loadChildren: './pages/add-discount/add-discount.module#AddDiscountPageModule' },
+  { path: 'codes', loadChildren: './pages/codes/codes.module#CodesPageModule', canActivate: [AuthGuard] },
+  { path: 'discover', loadChildren: './pages/discover/discover.module#DiscoverPageModule', canActivate: [AuthGuard] },
+  { path: 'add-discount', loadChildren: './pages/add-discount/add-discount.module#AddDiscountPageModule', canActivate: [AuthGuard] },
 
 ];
 @NgModule({

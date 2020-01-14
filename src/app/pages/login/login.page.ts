@@ -18,7 +18,6 @@ export class LoginPage implements OnInit {
     }
 
     async login() {
-      console.log('login');
       await this.authService.loginWithEmailAndPassword({username: '', email: this.email, password: this.password});
     }
 }

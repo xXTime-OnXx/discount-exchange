@@ -1,18 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>AddDiscount</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Add Discount</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form>
-    <ion-label>
-
-    </ion-label>
-  </form>
+    <ion-card class="card">
+        <ion-card-header>
+            <ion-card-title class="ion-text-center">Discount</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label position="floating" color="primary">Code</ion-label>
+                <ion-input [(ngModel)]="code" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" color="primary">Company</ion-label>
+                <ion-select [(ngModel)]="company" value="" interface="popover" required>
+                    <ion-select-option *ngFor="let company of companies | async"
+                                       [value]="company?.uid">{{ company?.name }}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" color="primary">Category</ion-label>
+                <ion-select [(ngModel)]="category" value="" interface="popover" required>
+                    <ion-select-option value="FOOD">Food</ion-select-option>
+                    <ion-select-option value="CLOTHING">Clothing</ion-select-option>
+                    <ion-select-option value="ACTIVITY">Activity</ion-select-option>
+                    <ion-select-option value="GAMING">Gaming</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
 
 <ion-tab-bar>
-  <ion-title color="danger">Back</ion-title>
-  <ion-title color="primary">Add</ion-title>
+    <ion-title color="danger" (click)="back()">Back</ion-title>
+    <ion-title color="primary" (click)="add()">Add</ion-title>
 </ion-tab-bar>

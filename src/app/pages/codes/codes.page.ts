@@ -23,4 +23,8 @@ export class CodesPage implements OnInit {
   async addDiscount() {
     await this.router.navigate(['add-discount']);
   }
+
+  async delete(id: string) {
+    await this.firestore.doc('codes/' + id).delete();
+  }
 }

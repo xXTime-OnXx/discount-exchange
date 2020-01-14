@@ -23,7 +23,6 @@ export class DiscoverPage implements OnInit {
 
     ngOnInit() {
         this.categories = Object.keys(Category).filter(k => typeof Category[k as any] === 'number');
-        console.log(this.categories);
         for (let i = 0; i < this.categories.length; i++) {
             this.codesCategory[i] = this.firestore.collection<Code>('codes', ref => ref.where('category', '==', this.categories[i]))
                 .valueChanges();
